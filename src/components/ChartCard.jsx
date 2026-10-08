@@ -1,0 +1,5 @@
+import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
+
+export default function ChartCard({ data, title, subtitle }) {
+  return <div className="sc-card p-5"><div className="mb-5"><h3 className="text-lg font-semibold text-singularity-text">{title}</h3><p className="mt-1 text-sm text-singularity-secondary">{subtitle}</p></div><div className="h-[300px]"><ResponsiveContainer width="100%" height="100%"><LineChart data={data}><CartesianGrid strokeDasharray="3 3" stroke="#26301B" /><XAxis dataKey="day" tick={{ fill: "#AEB5A0", fontSize: 11 }} axisLine={false} tickLine={false} /><YAxis tick={{ fill: "#AEB5A0", fontSize: 11 }} axisLine={false} tickLine={false} /><Tooltip contentStyle={{ background: "#0B1008", border: "1px solid #6F8500", borderRadius: "10px", color: "#F5F7F0" }} /><Line type="monotone" dataKey="historical" name="Historical Demand" stroke="#AEB5A0" strokeWidth={2} dot={false} connectNulls={false} /><Line type="monotone" dataKey="forecast" name="AI Forecast" stroke="#D8FF00" strokeWidth={3} dot={{ r: 3 }} connectNulls={false} /></LineChart></ResponsiveContainer></div></div>;
+}

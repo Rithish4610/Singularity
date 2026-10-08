@@ -1,0 +1,6 @@
+import RiskBadge from "./RiskBadge";
+
+export default function ScenarioSelector({ scenarios, selected, onChange }) {
+  const current = scenarios.find((item) => item.id === selected) || scenarios[0];
+  return <div className="sc-card p-5"><div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"><div><p className="sc-label">Demo scenario</p><h3 className="mt-1 text-lg font-semibold">Simulate Supply Conditions</h3><p className="mt-1 text-sm text-singularity-secondary">Change the scenario to demonstrate how the intelligence engine reacts.</p></div><div className="flex flex-wrap gap-2">{scenarios.map((scenario) => <button key={scenario.id} onClick={() => onChange(scenario.id)} className={`rounded-lg border px-3 py-2 text-sm transition ${selected === scenario.id ? "border-singularity-primary bg-singularity-primary text-black shadow-lime" : "border-singularity-border bg-singularity-surface text-singularity-secondary hover:border-singularity-primary hover:text-singularity-primary"}`}>{scenario.name}</button>)}</div></div><div className="mt-4 flex flex-wrap items-center gap-3 border-t border-singularity-border/30 pt-4"><span className="text-sm text-singularity-secondary">Current mode:</span><RiskBadge level={current.riskLevel} /><span className="text-sm text-singularity-secondary">{current.description}</span></div></div>;
+}

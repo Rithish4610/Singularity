@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { font-family: "Space Grotesk", sans-serif; color: #F5F7F0; background: #050805; font-synthesis: none; text-rendering: optimizeLegibility; }
+* { box-sizing: border-box; }
+html, body, #root { min-width: 320px; min-height: 100vh; margin: 0; background: #050805; }
+body { color: #F5F7F0; }
+button, input, select, textarea { font: inherit; }
+button { cursor: pointer; }
+::-webkit-scrollbar { width: 7px; height: 7px; }
+::-webkit-scrollbar-track { background: #0B1008; }
+::-webkit-scrollbar-thumb { background: #6F8500; border-radius: 10px; }
+@layer components {
+  .sc-card { @apply rounded-xl2 border border-singularity-border/40 bg-singularity-card; }
+  .sc-card-hover { @apply sc-card transition-all duration-200 hover:border-singularity-primary/60 hover:shadow-lime; }
+  .sc-button { @apply inline-flex items-center justify-center gap-2 rounded-lg bg-singularity-primary px-4 py-2.5 font-semibold text-singularity-bg transition-all duration-200 hover:bg-singularity-glow hover:shadow-lime-strong; }
+  .sc-button-outline { @apply inline-flex items-center justify-center gap-2 rounded-lg border border-singularity-primary/60 bg-singularity-primary/5 px-4 py-2.5 font-medium text-singularity-primary transition-all duration-200 hover:bg-singularity-primary/10 hover:border-singularity-primary; }
+  .sc-label { @apply text-xs font-medium uppercase tracking-widest text-singularity-secondary; }
+  .sc-title { @apply text-xl font-semibold text-singularity-text; }
+}
